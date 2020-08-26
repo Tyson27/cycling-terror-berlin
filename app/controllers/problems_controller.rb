@@ -15,22 +15,22 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new(problem_params)
 
-    # if @problem.save
-    #   redirect_to @problem, notice: 'Problem was successfully created.'
-    # else
-    #   render :new
-    # end
+    if @problem.save
+      # redirect_to @problem, notice: 'Problem was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    # if @problem.update(problem_params)
-    #   redirect_to @problem, notice: 'Problem was successfully updated.'
-    # else
-    #   render :edit
-    # end
+    if @problem.update(problem_params)
+      # redirect_to @problem, notice: 'Problem was successfully updated.'
+    else
+      render :edit
+  end
 
   def destroy
     @problem.destroy
@@ -38,10 +38,6 @@ class ProblemsController < ApplicationController
   end
 
   private
-
-  def set_problem
-    @problem = Problem.find(params[:id])
-  end
 
   def problem_params
     params.require(:problem).permit(:category, :description, :location)
