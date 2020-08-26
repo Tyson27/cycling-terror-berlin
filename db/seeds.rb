@@ -1,7 +1,6 @@
 require 'faker'
 
 category = %w(glass construction_work cycling_path)
-puts "cleaning"
 
 5.times do
   problem = Problem.new(
@@ -12,4 +11,3 @@ puts "cleaning"
     )
   problem.save!
 end
-puts "complete"
