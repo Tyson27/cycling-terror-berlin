@@ -2,6 +2,13 @@ class ProblemsController < ApplicationController
 
   def index
     @problems = Problem.all
+
+     @markers = @problems.geocoded.map do |problem|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
