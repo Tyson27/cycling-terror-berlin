@@ -2,6 +2,13 @@ class ProblemsController < ApplicationController
 
   def index
     @problems = Problem.all
+
+     @markers = @problems.geocoded.map do |problem|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
@@ -30,6 +37,7 @@ class ProblemsController < ApplicationController
       # redirect_to @problem, notice: 'Problem was successfully updated.'
     else
       render :edit
+    end
   end
 
   def destroy
@@ -42,6 +50,5 @@ class ProblemsController < ApplicationController
   def problem_params
     params.require(:problem).permit(:category, :description, :location)
   end
-
-
 end
+

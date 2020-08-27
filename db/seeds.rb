@@ -2,6 +2,7 @@ require 'faker'
 
 category = %w(glass construction_work cycling_path)
 
+
 5.times do
   problem = Problem.new(
     category: category.shuffle,
@@ -11,3 +12,5 @@ category = %w(glass construction_work cycling_path)
     )
   problem.save!
 end
+
+
