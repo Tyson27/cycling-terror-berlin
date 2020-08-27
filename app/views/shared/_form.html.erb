@@ -1,0 +1,6 @@
+<%= simple_form_for(@problem) do |f| %>
+  <%= f.input :category, prompt: "Please Select", as: :select, collection: Problem::CATEGORIES%>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.submit %>
+<% end %>
