@@ -44,5 +44,4 @@ class ProblemsController < ApplicationController
     params.require(:problem).permit(:category, :description, :location)
   end
 
-
 end
