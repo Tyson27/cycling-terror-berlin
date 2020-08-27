@@ -30,6 +30,7 @@ class ProblemsController < ApplicationController
       # redirect_to @problem, notice: 'Problem was successfully updated.'
     else
       render :edit
+    end
   end
 
   def destroy
@@ -43,4 +44,4 @@ class ProblemsController < ApplicationController
     params.require(:problem).permit(:category, :description, :location)
   end
 end
-end
+
