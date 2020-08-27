@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+
+.picture_backround{
+
+background-image: image-url("carina-baumgartner-XTwukUIkLl8-unsplash.jpg");
+height: 100%;
+background-position: right 50% bottom 50%;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+html, body {
+  height: 100%;
+
+}
+
+
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
