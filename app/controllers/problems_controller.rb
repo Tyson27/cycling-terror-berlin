@@ -31,6 +31,7 @@ class ProblemsController < ApplicationController
       # redirect_to @problem, notice: 'Problem was successfully updated.'
     else
       render :edit
+    end
   end
 
   def destroy
