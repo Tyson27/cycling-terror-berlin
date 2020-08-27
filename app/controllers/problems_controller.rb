@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  belongs_to :user
 
   def index
     @problems = Problem.all
