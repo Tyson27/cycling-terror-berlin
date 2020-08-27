@@ -1,2 +1,9 @@
-<h1>Problems#show</h1>
-<p>Find me in app/views/problems/show.html.erb</p>
+<h1>Your Requests</h1>
+<div>
+  <% @problem.each do |f| %>
+  <%= @problem.category %>
+  <%= @problem.description %>
+  <%= @problem.date %>
+  <% end %>
+</div>
+

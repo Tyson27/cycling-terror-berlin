@@ -5,10 +5,9 @@ class ProblemsController < ApplicationController
 
      @markers = @problems.geocoded.map do |problem|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: problem.latitude,
+        lng: problem.longitude
       }
-    end
   end
 
   def show
@@ -17,6 +16,7 @@ class ProblemsController < ApplicationController
 
   def new
     @problem = Problem.new
+
   end
 
   def create
@@ -46,6 +46,7 @@ class ProblemsController < ApplicationController
     @problem.destroy
     # redirect_to ..._url, notice: 'Problem was successfully destroyed'
   end
+end
 
   private
 
@@ -53,4 +54,3 @@ class ProblemsController < ApplicationController
     params.require(:problem).permit(:category, :description, :location)
   end
 end
-
