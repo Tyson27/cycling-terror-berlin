@@ -1,5 +1,4 @@
 class ProblemsController < ApplicationController
-  belongs_to :user
 
   def index
     @problems = Problem.all
@@ -31,6 +30,7 @@ class ProblemsController < ApplicationController
       # redirect_to @problem, notice: 'Problem was successfully updated.'
     else
       render :edit
+    end
   end
 
   def destroy
