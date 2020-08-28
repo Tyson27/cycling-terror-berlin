@@ -6,9 +6,10 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @current_user
   end
 
   def dashboard
+    @problems = current_user.problems
   end
-
 end
