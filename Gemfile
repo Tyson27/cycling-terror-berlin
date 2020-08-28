@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 
 #installed gems by our project group:
+gem "algoliasearch-rails"
 gem 'faker'
 gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
