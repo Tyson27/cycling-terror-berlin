@@ -5,8 +5,8 @@ class ProblemsController < ApplicationController
 
      @markers = @problems.geocoded.map do |problem|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: problem.latitude,
+        lng: problem.longitude
       }
     end
   end
