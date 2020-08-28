@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 #   validates :email, presence: true -> done by devise
 #   validates :password, presence: true -> done by devise
+  acts_as_favoritor
 end
