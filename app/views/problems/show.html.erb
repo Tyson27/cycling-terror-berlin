@@ -1,2 +1,15 @@
-<h1>Problems#show</h1>
-<p>Find me in app/views/problems/show.html.erb</p>
+
+
+<div>
+
+  <div class="container">
+    <div class="problem_header">
+    <h1>Category: <%= @problem.category %></h1></div>
+    <br>
+    <h2 class="problem_description">Description: <%= @problem.description.capitalize %></h2>
+
+    <h3 class="problem_info">Location: <%= @problem.location.capitalize %></h3>
+    <h3 class="problem_info">Date: <%= @problem.date %></h3>
+</div>
+
+</div>

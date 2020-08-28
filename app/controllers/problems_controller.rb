@@ -8,7 +8,6 @@ class ProblemsController < ApplicationController
         lat: problem.latitude,
         lng: problem.longitude
       }
-    end
   end
 
   def show
@@ -46,6 +45,7 @@ class ProblemsController < ApplicationController
     @problem.destroy
     # redirect_to ..._url, notice: 'Problem was successfully destroyed'
   end
+end
 
   private
 
@@ -53,4 +53,3 @@ class ProblemsController < ApplicationController
     params.require(:problem).permit(:category, :description, :location)
   end
 end
-
