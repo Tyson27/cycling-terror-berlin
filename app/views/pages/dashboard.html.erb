@@ -1,6 +1,20 @@
 <h1>My Dashboard</h1>
 
 <% @problems.each do |problem| %>
-  <%= problem.category %>
-  <%= problem.location %>
+<%= link_to problem_path(problem) do %>
+<div class="card-product">
+  <% if problem.category == "Glass" %>
+  <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
+  <% elsif problem.category == "Construction Work" %>
+  <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="">
+  <% else %>
+  <img src="https://pbs.twimg.com/media/DsyhtoJW0AUiwsa.jpg" alt="">
+  <% end %>
+  <div class="card-product-infos">
+    <h2><%= problem.category %></h2>
+    <p><%= problem.location %></p>
+  </div>
+</div>
+  <% end %>
 <% end %>
+
