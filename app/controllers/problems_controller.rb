@@ -21,9 +21,11 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
+    @problem.user = current_user
+    @problem.date = DateTime.now
 
-    if @problem.save
-      # redirect_to @problem, notice: 'Problem was successfully created.'
+    if @problem.save!
+      redirect_to problems_path, notice: 'Problem was successfully created.'
     else
       render :new
     end
