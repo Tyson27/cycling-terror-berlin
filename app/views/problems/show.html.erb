@@ -1,15 +1,11 @@
-
-
-<div>
-
-  <div class="container">
-    <div class="problem_header">
-    <h1>Category: <%= @problem.category %></h1></div>
-    <br>
-    <h2 class="problem_description">Description: <%= @problem.description.capitalize %></h2>
-
-    <h3 class="problem_info">Location: <%= @problem.location.capitalize %></h3>
-    <h3 class="problem_info">Date: <%= @problem.date %></h3>
-</div>
-
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Category: <%= @problem.category %></h2>
+      <p>Description: <%= @problem.description.capitalize %></p>
+    <p>Location: <%= @problem.location.capitalize %></p>
+    <p>Date: <%= @problem.date %></p>
+    </div>
+  </div>
 </div>
