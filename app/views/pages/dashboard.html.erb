@@ -1,6 +1,10 @@
-<h1>My Dashboard</h1>
+<div class="blue-backround">
+    <%= image_tag "bike-01.png", alt: "bike", class: 'bike-image' %>
+
+  <h1>My Dashboard</h1>
 
 <% @problems.each do |problem| %>
+
 <%= link_to problem_path(problem) do %>
 <div class="card-product">
   <% if problem.category == "Glass" %>
@@ -18,3 +22,5 @@
   <% end %>
 <% end %>
 
+
+</div>
