@@ -2,14 +2,19 @@
 <div class="picture_backround">
 
 
-  <h1>Welcome back <%= %>!</h1>
-  <p>What's in your mind?</p>
+  <div class="container">
 
+  <%= image_tag "logo_transparent.png", alt: "logo", class: "logo"%>
 
-  <button> <%= link_to 'Add a problem', new_problem_path %></button>
-  <button> <%= link_to 'My Card', problems_path %></button>
-  <button> <%= link_to 'My Contributions', problems_path %></button>
-  <button>About</button>
+  <h1>Welcome back <%= current_user.first_name %>!</h1>
+
+  <%= link_to new_problem_path, class: "btn btn-ghost" do %> <i class="fas fa-plus-circle"></i> Add a Problem <% end %>
+  <%= link_to problems_path, class: "btn btn-ghost" do %> <i class="fas fa-map-marked-alt"></i> Show my Map <% end %>
+  <%= link_to dashboard_path, class: "btn btn-ghost" do %> <i class="far fa-bookmark"></i> My Contributions <% end %>
+  <%= link_to dashboard_path, class: "btn btn-ghost" do %> <i class="fas fa-info-circle"></i> Information <% end %>
+
+  </div>
 
 </div>
+
 

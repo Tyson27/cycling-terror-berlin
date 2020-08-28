@@ -23,3 +23,49 @@ a {
   }
 }
 
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  background: white;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.container{
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+}
+
+
+p {
+  margin-top: 0;
+  padding-top: 25px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+    padding-top: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $blue;
+    font-size: 2rem;
+}
+
+.logo {
+  height: 100px;
+  margin-top: 10px;
+}
