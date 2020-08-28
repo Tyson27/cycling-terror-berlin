@@ -1,5 +1,4 @@
 class ProblemsController < ApplicationController
-
   def index
     @problems = Problem.all
 
@@ -8,7 +7,9 @@ class ProblemsController < ApplicationController
         lat: problem.latitude,
         lng: problem.longitude
       }
+    end
   end
+
 
   def show
     @problem = Problem.find(params[:id])
@@ -45,7 +46,6 @@ class ProblemsController < ApplicationController
     @problem.destroy
     # redirect_to ..._url, notice: 'Problem was successfully destroyed'
   end
-end
 
   private
 
