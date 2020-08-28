@@ -6,7 +6,7 @@
 
   <%= image_tag "logo_transparent.png", alt: "logo", class: "logo"%>
 
-  <h1>Welcome back <%= current_user.first_name %>!</h1>
+  <h1 class="hometext">Welcome back <%= current_user.first_name %>!</h1>
 
   <%= link_to new_problem_path, class: "btn btn-ghost" do %> <i class="fas fa-plus-circle"></i> Add a Problem <% end %>
   <%= link_to problems_path, class: "btn btn-ghost" do %> <i class="fas fa-map-marked-alt"></i> Show my Map <% end %>
