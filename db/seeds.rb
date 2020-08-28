@@ -14,16 +14,24 @@ User.destroy_all
     email: "t.klinkhamer@gmail.com"
     )
 
-40.times do
+100.times do
   problem = Problem.new(
     category: category.shuffle,
     description: Faker::ChuckNorris.fact,
-    location: Faker::Address.street_address,
-    latitude: (52 + rand()),
-    longitude: (13 + rand()),
+    # location: Faker::Address.street_address,
+    latitude: (52.46 + 0.1*rand()),
+    longitude: (13.35 + 0.1*rand()),
     date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
     user_id: User.first.id
     )
   problem.save!
 end
+
+# (52.49 + 0.01*rand()),
+# Berlin - 52.5200° N, 13.4050° E
+
+# brandenburg - 52.4125° N, 12.5316° E
+# ostkreuz - 52.5158° N, 13.4540° E
+# sudkreuz - 52.4756° N, 13.3656° E
+
 
