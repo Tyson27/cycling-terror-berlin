@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-
+    @current_user
   end
 
   def dashboard
