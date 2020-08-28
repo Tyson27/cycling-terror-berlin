@@ -1,6 +1,6 @@
 <h1>My Dashboard</h1>
 
-
-<!-- Current Users Problems listed -->
-
-
+<% @problems.each do |problem| %>
+  <%= problem.category %>
+  <%= problem.location %>
+<% end %>
