@@ -7,14 +7,15 @@ const initMapbox = () => {
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
-    // Searching on your map
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
-
     // Rafael code:
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
+
+    // Searching on your map
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       new mapboxgl.Marker()
