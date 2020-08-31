@@ -1,26 +1,36 @@
-<div class="blue-backround">
-    <%= image_tag "bike-01.png", alt: "bike", class: 'bike-image' %>
+<!-- THIS 'DASHBOARD' IS SHOWING ALL THE PROBLEMS ON THE PROBLEMS PAGE THAT  -->
+
+<div class="blue-backround container-main">
+  <%= image_tag "bike-01.png", alt: "bike", class: 'bike-image' %>
 
   <h1>My Dashboard</h1>
 
-<% @problems.each do |problem| %>
 
-<%= link_to problem_path(problem) do %>
-<div class="card-product">
-  <% if problem.category == "Glass" %>
-  <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
-  <% elsif problem.category == "Construction Work" %>
-  <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="">
-  <% else %>
-  <img src="https://pbs.twimg.com/media/DsyhtoJW0AUiwsa.jpg" alt="">
-  <% end %>
-  <div class="card-product-infos">
-    <h2><%= problem.category %></h2>
-    <p><%= problem.location %></p>
+  <% @problems.each do |problem| %>
+  <div class="cards">
+    <%= link_to problem_path(problem) do %>
+    <div class="card-product">
+      <% if problem.category == "Glass" %>
+      <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
+      <% elsif problem.category == "Construction Work" %>
+      <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="">
+      <% else %>
+      <img src="https://pbs.twimg.com/media/DsyhtoJW0AUiwsa.jpg" alt="">
+      <% end %>
+    <% end %>
+      <div class="card-product-infos">
+        <h2><%= problem.category %></h2>
+        <p><%= problem.location %></p>
+        <!-- <h2>Category: <%#= @problem.category %></h2> -->
+        <!-- <p>Description: <%#= @problem.description.capitalize %></p>
+        <p>Location: <%#= @problem.location.capitalize %></p>
+        <p>Date: <%#= @problem.date %></p>
+        <p>Votes: <%#= @problem.favoritors.count %></p> -->
+      </div>
+    </div>
   </div>
-</div>
-  <% end %>
-<% end %>
-
+    <% end %>
 
 </div>
+
+
