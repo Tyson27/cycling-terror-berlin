@@ -1,5 +1,4 @@
 class ProblemsController < ApplicationController
-
   def index
     @problems = Problem.all
 
@@ -10,6 +9,7 @@ class ProblemsController < ApplicationController
       }
     end
   end
+
 
   def show
     @problem = Problem.find(params[:id])
@@ -47,6 +47,7 @@ class ProblemsController < ApplicationController
     # redirect_to ..._url, notice: 'Problem was successfully destroyed'
   end
 
+
   def favorite
     @problem = Problem.find(params[:id])
     type = params[:type]
@@ -62,6 +63,8 @@ class ProblemsController < ApplicationController
       redirect_to dashboard_path, notice: 'Nothing happened.'
     end
   end
+
+
 
   private
 
