@@ -7,6 +7,13 @@ const initAutocomplete = () => {
   if (addressInput) {
     places({ container: addressInput });
   }
+
 };
 
-export { initAutocomplete };
+const initAutocompleteForm = () => {
+  const addressInput = document.querySelector('.algolia-input');
+  if (addressInput) {
+    places({ container: addressInput });
+  }
+};
+export { initAutocomplete, initAutocompleteForm };
