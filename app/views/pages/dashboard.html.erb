@@ -1,7 +1,8 @@
+<!-- THIS 'DASHBOARD' IS SHOWING ALL THE PROBLEMS ON THE PROBLEMS PAGE THAT  -->
+
+<div class="blue-background container-main">
 
 <h1>Dashboard</h1>
-
-<h3>My requests</h3>
 
 <% @problems.each do |problem| %>
   <%= link_to problem_path(problem) do %>
@@ -25,9 +26,9 @@
 
 <h3>Supported requests</h3>
 
-
-
 <%= @user.all_favorites.inspect %>
+
+</div>
 
 
 
