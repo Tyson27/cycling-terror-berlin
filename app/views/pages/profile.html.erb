@@ -1,12 +1,10 @@
 <h1>My Profile</h1>
 
-<!-- current_user.first_name (do all of it in HTML)
-last.name
-user.name
+<div class="container">
+  <%= current_user.first_name.capitalize %>
+  <%= current_user.last_name.capitalize%>
+  <%= current_user.username %>
 
-user.picture (diffrent branch)
 
-
--->
-
-<%= current_user.first_name %>
+  <%= link_to "Change my password", edit_user_registration_path %>
+</div>

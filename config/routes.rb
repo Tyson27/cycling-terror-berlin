@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :problems
+  resources :problems do
+   put :favorite, on: :member
+  end
   devise_for :users
   root to: 'pages#home'
   get '/profile', to:'pages#profile'
