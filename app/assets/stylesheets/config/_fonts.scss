@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Oxygen&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Fira Sans", "Helvetica", "sans-serif";
-$headers-font: "Fira Sans", "Helvetica", "sans-serif";
+$body-font: "Fira Sans", "Helvetica", "sans-serif"; // Helvetica, sans-serif are background fonts
+$headers-font: "Oxygen", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -1,1 +1,15 @@
+.btn-outline {
+  color: #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 5px;
+  border: 3px solid black;
+  font-weight: lighter;
+  background: white;
+  width: 230px;
+  margin: auto; // we can change it if needed to set px left,right, up, bottom.
+}
+
+.btn-outline:hover {
+  border: 3px solid orange;
+}
 
