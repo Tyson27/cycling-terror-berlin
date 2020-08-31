@@ -1,4 +1,6 @@
 class ProblemsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index]
+
   def index
     @problems = Problem.all
 

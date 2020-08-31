@@ -7,8 +7,15 @@
   <%= image_tag "logo_transparent.png", alt: "logo", class: "logo"%>
 
   <h1 class="hometext">Welcome back, <%= current_user.first_name if current_user %>!</h1>
-
-  <%= link_to new_problem_path, class: "btn btn-ghost" do %> <i class="fas fa-plus-circle"></i> Add a Problem <% end %>
+  <% if current_user %>
+    <%= link_to new_problem_path, class: "btn btn-ghost" do %>
+      <i class="fas fa-plus-circle"></i> Add a Problem
+    <% end %>
+  <% else %>
+    <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal">
+      <i class="fas fa-plus-circle"></i> Add a Problem
+    </button>
+  <% end %>
   <%= link_to problems_path, class: "btn btn-ghost" do %> <i class="fas fa-map-marked-alt"></i> Show my Map <% end %>
   <%= link_to dashboard_path, class: "btn btn-ghost" do %> <i class="far fa-bookmark"></i> My Contributions <% end %>
   <%= link_to dashboard_path, class: "btn btn-ghost" do %> <i class="fas fa-info-circle"></i> Information <% end %>
@@ -18,3 +25,37 @@
 </div>
 
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(:user, url: user_session_path) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
