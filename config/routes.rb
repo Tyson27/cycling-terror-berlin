@@ -1,4 +1,5 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
+  resource :profile
   resources :problems do
    put :favorite, on: :member
   end
