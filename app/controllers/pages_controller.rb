@@ -10,24 +10,9 @@ class PagesController < ApplicationController
   # end
 
   def dashboard
-    @problems = current_user.problems
+    @user_problems = current_user.problems
     @user = current_user
-    @user.favorite(@problems.first)
-  end
-
-  def favorite
-    type = params[:type]
-    if type == "favorite"
-      current_user.favorites << @problem
-      redirect_to :back, notice: 'You favorited #{@problem.name}'
-
-    elsif type == "unfavorite"
-      current_user.favorites.delete(@problem)
-      redirect_to :back, notice: 'Unfavorited #{@problem.name}'
-
-    else
-      # Type missing, nothing happens
-      redirect_to :back, notice: 'Nothing happened.'
-    end
+    @favorites = @user.favorites_by_type('Problem')
+    @favorite_problems = @favorites.map{ |favorite| favorite.favoritable }
   end
 end

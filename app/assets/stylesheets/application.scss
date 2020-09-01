@@ -18,5 +18,11 @@
   width: 100%; //span full screen size on every device
   padding: 15px; // 15px is normal
   margin: auto; // so it is always centered
+  h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  // h2 - do we have one?
 }
 

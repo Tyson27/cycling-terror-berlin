@@ -5,8 +5,18 @@
     <%= f.input :category, prompt: "Please Select", as: :select, collection: Problem::CATEGORIES, input_html: { class: 'form_inputs' } %>
     <%= f.input :description, input_html: { class: 'form_inputs' } %>
     <%= f.input :location, :input_html => { :class => 'algolia-input' } %>
-    <%#= f.input :location, input_html: { class: 'form_inputs' } %>   
-    <%= f.button :submit, input_html: { class: 'form_submit mt-3' } %>
-
+    <%#= f.input :location, input_html: { class: 'form_inputs' } %>
+    <%= f.button :submit, { class: 'btn-submit' }%>
   <% end %>
+  
+<br>
+<br>
+<br>
+
+
+<!-- Add cycling image to other forms-->
+
+<%= image_tag("noun_bike riding_3265755.png", width:"100", height:"auto") %>
+
 </div>
+

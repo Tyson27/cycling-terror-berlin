@@ -16,7 +16,7 @@ User.destroy_all
 
 100.times do
   problem = Problem.new(
-    category: category.shuffle,
+    category: category.sample,
     description: Faker::ChuckNorris.fact,
     # location: Faker::Address.street_address,
     latitude: (52.46 + 0.1*rand()),
