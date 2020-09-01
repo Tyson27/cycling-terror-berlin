@@ -49,6 +49,25 @@ class ProblemsController < ApplicationController
     # redirect_to ..._url, notice: 'Problem was successfully destroyed'
   end
 
+
+  def favorite
+    @problem = Problem.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorite(@problem)
+      redirect_to dashboard_path, notice: "You favorited #{@problem.description}"
+
+    elsif type == "unfavorite"
+      current_user.unfavorite(@problem)
+      redirect_to dashboard_path, notice: "Unfavorited #{@problem.description}"
+    else
+      # Type missing, nothing happens
+      redirect_to dashboard_path, notice: 'Nothing happened.'
+    end
+  end
+
+
+
   private
 
   def problem_params

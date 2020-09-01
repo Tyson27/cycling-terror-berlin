@@ -1,10 +1,7 @@
 
-<div class="blue-backround">
+<h1>Whats the Problem?</h1>
 
-  <%= image_tag "bike-01.png", alt: "bike", class: 'bike-image' %>
+<%= render "shared/form", problem: @problem %>
+<!-- key value pair to keep dry the problem iv. The form doesnt have a direct connection to the controller  -->
 
-  <h1 class="text-center">Whats the Problem?</h1>
-
-  <%= render "shared/form" %>
-
-</div>
+<div class="blue-background">

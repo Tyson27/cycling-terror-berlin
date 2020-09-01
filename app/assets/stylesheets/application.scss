@@ -13,3 +13,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.container-main {
+  width: 100%; //span full screen size on every device
+  padding: 15px; // 15px is normal
+  margin: auto; // so it is always centered
+}
+
