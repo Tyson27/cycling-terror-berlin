@@ -1,13 +1,40 @@
-<h1>My Profile</h1>
-
-<div class="container">
-  <%= current_user.first_name.capitalize %>
-  <%= current_user.last_name.capitalize%>
-  <%= current_user.username %>
-
-  <%= link_to "Change my password", edit_user_registration_path %>
+<div class="mt-5 pt-5">
+  <div class="text-center mb-2">
+    <%= image_tag "default.jpg", alt: "Profile Pic", class: "avatar-large mt-4" %>
+  </div>
+    <div class="text-center d-flex justify-content-center align-items-center">
+      <%= link_to edit_user_registration_path, class: "edit-profile-icon" do %>
+       <i class="fas fa-pencil-alt"></i>
+      <% end %>
+     <h3><%= current_user.username %></h3>
+    </div>
 </div>
-<% if user_signed_in? %>
-  <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<% end %>
+
+<div class="text-center">
+
+  <div class="profile_info">
+
+    <p><%= current_user.first_name.capitalize %>
+      <%= current_user.last_name.capitalize%></p>
+      <p class="p-0" ><%= current_user.email.capitalize  %></p>
+
+
+  </div>
+
+    <div class="mb-4">
+      <%= link_to edit_user_registration_path, class: "btn btn-outline" do %>
+       <i class="fas fa-exchange-alt"></i> Change Password
+      <% end %>
+   </div>
+
+    <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline" do %> <i class="fas fa-sign-out-alt"></i> Logout <% end %>
+    <% end %>
+
+</div>
+
+
+
+
+
+

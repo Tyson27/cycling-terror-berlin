@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def dashboard
     @problems = current_user.problems
     @user = current_user
-    @user.favorite(@problems.first)
+    # @user.favorite(@problems.first)
   end
 
   def favorite
