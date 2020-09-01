@@ -5,6 +5,9 @@
   <%= current_user.last_name.capitalize%>
   <%= current_user.username %>
 
-
   <%= link_to "Change my password", edit_user_registration_path %>
 </div>
+<% if user_signed_in? %>
+  <li>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% end %>
