@@ -1,6 +1,7 @@
+// normal buttons that get a coloured line when you hover over it
 .btn-outline {
   color: #4A4A4A;
-  padding: 8px 24px;
+  padding: 10px 24px;
   border-radius: 5px;
   border: 3px solid black;
   font-weight: lighter;
@@ -9,7 +10,23 @@
   margin: auto; // we can change it if needed to set px left,right, up, bottom.
 }
 
+// hover on mobile here works if user clicks on field to fill in.
 .btn-outline:hover {
   border: 3px solid orange;
 }
+
+// submit button that change colour completely -> NO on mobile hover does not work on clicking buttons!
+.btn-submit {
+  color: white;
+  background: green;
+  padding: 10px 24px;
+  border-radius: 5px;
+  // border: 3px solid black;
+  font-weight: lighter;
+  width: 230px;
+  margin: auto; // we can change it if needed to set px left,right, up, bottom.
+
+
+}
+
 
