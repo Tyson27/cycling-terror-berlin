@@ -5,9 +5,9 @@ class PagesController < ApplicationController
     @home = true
   end
 
-  def profile
-    @current_user
-  end
+  # def profile
+  #   @current_user
+  # end
 
   def dashboard
     @problems = current_user.problems

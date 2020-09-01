@@ -1,4 +1,6 @@
 <h1>My Profile</h1>
+<%= cl_image_tag @user.avatar.key, radius: 200, height: 200, width: 200, crop: :fill %>
+<%= link_to "Update profile", edit_user_registration_path %>
 
 <div class="container">
   <%= current_user.first_name.capitalize %>

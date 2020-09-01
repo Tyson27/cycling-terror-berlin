@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 
 #installed gems by our project group:
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 gem "algoliasearch-rails"
 gem 'faker'
 gem 'acts_as_favoritor'
