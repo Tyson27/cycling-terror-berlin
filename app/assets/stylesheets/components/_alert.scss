@@ -4,3 +4,31 @@
   right: 16px;
   z-index: 1000;
 }
+
+.pop-up {
+  text-align: center;
+  position: fixed;
+  color: #4A4A4A;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid #4A4A4A;
+  font-weight: lighter;
+  background: white;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+.content {
+  display: inline-block;
+}
+.content-title{
+font-size:10px;
+padding: 2px;
+margin: 0;
+
+}
+.content-text{
+  font-size:8px;
+padding: 2px;
+margin: 0;
+}

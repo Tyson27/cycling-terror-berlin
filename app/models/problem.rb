@@ -8,9 +8,9 @@ class Problem < ApplicationRecord
 
   acts_as_favoritable
 # check if its been used by someone currently
-  CATEGORIES = ["glass", "construction_work", "cycling_path"]
+  CATEGORIES = ["construction_work", "cycling_path", "glass"]
   FORM_CATEGORIES = [
-    ["Glass", "glass"], ["Construction work", "construction_work"], ["Cycling path", "cycling_path"]
+    ["Construction work", "construction_work"], ["Cycling path", "cycling_path"], ["Glass", "glass"]
   ]
 
   validates :category, presence: true
