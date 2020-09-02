@@ -7,7 +7,7 @@ puts "Database restored"
 
 
   user = User.create!(
-    first_name: "Rafael"
+    first_name: "Rafael",
     last_name: "Casique",
     username: "recasique",
     password: "123456",

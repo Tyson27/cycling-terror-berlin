@@ -9,7 +9,7 @@ class ProblemsController < ApplicationController
         lat: problem.latitude,
         lng: problem.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { problem: problem }),
-        image_url: helpers.asset_url("#{problem.category}.png")
+        image_url: helpers.asset_url("#{problem.categories}.png")
       }
     end
   end
