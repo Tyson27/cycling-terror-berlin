@@ -7,8 +7,11 @@ class Problem < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   acts_as_favoritable
-
-  CATEGORIES = ["Glass", "Construction Work", "Cycling Path"]
+# check if its been used by someone currently
+  CATEGORIES = ["Glass", "Construction_work", "Cycling_path"]
+  FORM_CATEGORIES = [
+    ["Glass", "glass"], ["Construction work", "construction_work"], ["Cycling path", "cycling_path"]
+  ]
 
   validates :category, presence: true
   validates :date, presence: true
