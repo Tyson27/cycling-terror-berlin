@@ -12,9 +12,25 @@
   margin: auto;
 }
 
-.form_submit {
-  background-color: #000;
-  border-color: #000;
-  color: orange;
-  cursor: pointer;
-}
+// .form_submit {
+//   background-color: #000;
+//   border-color: #000;
+//   color: green;
+//   cursor: pointer;
+// }
+
+// Submit form in form.html.erb file NO we use button and on mobile hover does not work on clicking buttons!
+// .form-submit {
+//  color: green;
+//   padding: 10px 24px;
+//   border-radius: 5px;
+//   border: 3px green;
+//   font-weight: lighter;
+//   background: white;
+//   width: 230px;
+//   margin: auto; // we can change it if needed to set px left,right, up, bottom.
+//   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+//     transition-property: color, background-color, border-color, box-shadow;
+//     transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+//     transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+//     transition-delay: 0s, 0s, 0s, 0s;

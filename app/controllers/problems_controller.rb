@@ -1,17 +1,29 @@
 class ProblemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index]
 
-  def index
-    @problems = Problem.all
+  # def index
+  #   @problems = Problem.all
 
-     @markers = @problems.geocoded.map do |problem|
+  #    @markers = @problems.geocoded.map do |problem|
+  #     {
+  #       lat: problem.latitude,
+  #       lng: problem.longitude
+  #     }
+  #   end
+  # end
+
+  def index
+    @problems = Problem.geocoded
+
+    @markers = @problems.map do |problem|
       {
         lat: problem.latitude,
-        lng: problem.longitude
+        lng: problem.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { problem: problem }),
+        image_url: helpers.asset_url("#{problem.category}.png")
       }
     end
   end
-
 
   def show
     @problem = Problem.find(params[:id])
