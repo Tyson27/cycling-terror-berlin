@@ -1,27 +1,28 @@
 require 'faker'
 
-
+puts "Cleaning database"
 Problem.destroy_all
 User.destroy_all
+puts "Database restored"
 
-# 5.times do
+
   user = User.create!(
-    first_name: "tom",
-    last_name: "lewagon",
-    username: "tomlewagon",
+    first_name: "Rafael"
+    last_name: "Casique",
+    username: "recasique",
     password: "123456",
-    email: "t.klinkhamer@gmail.com"
+    email: "recasique@gmail.com"
     )
 
+categories = Problem::CATEGORIES
 100.times do
-category = %w(glass construction_work cycling_path)
   problem = Problem.new(
-    category: category.sample,
+    category: categories.sample,
     description: Faker::ChuckNorris.fact,
     # location: Faker::Address.street_address,
     latitude: (52.46 + 0.1*rand()),
     longitude: (13.35 + 0.1*rand()),
-    date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+    date: Faker::Date.between(from: '2020-08-25', to: '2020-09-01'),
     user_id: User.first.id
     )
   problem.save!
