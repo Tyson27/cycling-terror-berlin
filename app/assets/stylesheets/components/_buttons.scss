@@ -7,7 +7,7 @@
   font-weight: lighter;
   background: white;
   width: 230px;
-  margin: 0; // we can change it if needed to set px left,right, up, bottom.
+  margin: 0; // we can change it if needed to set px left,margin-right: 10px, up, bottom.
 }
 
 // hover on mobile here works if user clicks on field to fill in.
@@ -25,8 +25,23 @@
   font-weight: lighter;
   width: 230px;
   margin: auto; // we can change it if needed to set px left,right, up, bottom.
-
-
 }
 
+.btn-requests-menu {
+  color: $black;
+  background: $white;
+  // padding: 10px 24px;
+  border-radius: 5px;
+  border: 3px solid black;
+  font-weight: lighter;
+  width: 230px;
+  margin: 10px 10px 10px 10px; // we can change it if needed to set px left,right, up, bottom.
+  &:active, &:focus, &:hover{
+    background: $red;
+  }
+}
 
+.btn-requests-menu-active{
+  background: $red;
+
+}
