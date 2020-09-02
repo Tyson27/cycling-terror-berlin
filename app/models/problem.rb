@@ -13,6 +13,8 @@ class Problem < ApplicationRecord
     ["Glass", "glass"], ["Construction work", "construction_work"], ["Cycling path", "cycling_path"]
   ]
 
+
+
   validates :category, presence: true
   validates :date, presence: true
 end
