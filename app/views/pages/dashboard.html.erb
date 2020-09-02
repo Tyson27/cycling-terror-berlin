@@ -4,28 +4,33 @@
 
 <h1>Dashboard</h1>
 
+<div class="cards-dash">
 <h3>Created requests</h3>
 
 <% @user_problems.each do |user_problem| %>
   <%= link_to problem_path(user_problem) do %>
     <div class="card-product">
-      <% if user_problem.category == "Glass" %>
+      <% if user_problem.category == "glass" %>
         <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
-      <% elsif user_problem.category == "Construction Work" %>
+      <% elsif user_problem.category == "construction_work" %>
         <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="">
       <% else %>
-        <img src="https://pbs.twimg.com/media/DsyhtoJW0AUiwsa.jpg" alt="">
+        <img src="https://images.unsplash.com/photo-1485381771061-e2cbd5317d9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="">
       <% end %>
       <div class="card-product-infos">
         <h2><%= user_problem.category %></h2>
-        <p><%= user_problem.location %></p>
-        <p></p>
+
+        <p class="card-product-adress"><%= user_problem.location %></p>
+        <p class="card-product-description"><%= user_problem.description %></p>
+        
+
         <%= link_to "favorite", favorite_problem_path(user_problem, type: "favorite"), method: :put %>
         <%= link_to "unfavorite", favorite_problem_path(user_problem, type: "unfavorite"), method: :put %>
       </div>
     </div>
   <% end %>
 <% end %>
+</div>
 
 <h3>Supported requests</h3>
   <% @favorite_problems.each do |favorite_problem| %>
