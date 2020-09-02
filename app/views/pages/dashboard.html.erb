@@ -19,7 +19,7 @@
       <div class="card-product-infos">
         <h2><%= user_problem.category %></h2>
         <p><%= user_problem.location %></p>
-        <p></p>
+        <p><%= user_problem.description %> </p>
         <%= link_to "favorite", favorite_problem_path(user_problem, type: "favorite"), method: :put %>
         <%= link_to "unfavorite", favorite_problem_path(user_problem, type: "unfavorite"), method: :put %>
       </div>
