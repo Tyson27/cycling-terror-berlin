@@ -1,6 +1,5 @@
 require 'faker'
 
-category = %w(glass construction_work cycling_path)
 
 Problem.destroy_all
 User.destroy_all
@@ -15,6 +14,7 @@ User.destroy_all
     )
 
 100.times do
+category = %w(glass construction_work cycling_path)
   problem = Problem.new(
     category: category.sample,
     description: Faker::ChuckNorris.fact,

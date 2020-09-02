@@ -1,7 +1,11 @@
 <div class="mt-5 pt-5">
   <div class="text-center mb-2">
-    <%#= image_tag "default.jpg", alt: "Profile Pic", class: "avatar-large mt-4" %>
-<%= cl_image_tag @user.avatar.key, class: "avatar", crop: :fill %>
+    <% if @user.avatar.attachment %>
+      <%= cl_image_tag @user.avatar.key, class: "avatar", crop: :fill %>
+    <% else  %>
+      <%= image_tag "default.jpg", alt: "Profile Pic", class: "avatar-large mt-4" %>
+    <% end %>
+
   </div>
     <div class="text-center d-flex justify-content-center align-items-center">
       <%= link_to edit_user_registration_path, class: "edit-profile-icon" do %>
@@ -10,6 +14,7 @@
      <h3><%= current_user.username %></h3>
     </div>
 </div>
+
 
 <div class="text-center">
 
