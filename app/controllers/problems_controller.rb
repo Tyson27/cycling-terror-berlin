@@ -1,17 +1,6 @@
 class ProblemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index]
 
-  # def index
-  #   @problems = Problem.all
-
-  #    @markers = @problems.geocoded.map do |problem|
-  #     {
-  #       lat: problem.latitude,
-  #       lng: problem.longitude
-  #     }
-  #   end
-  # end
-
   def index
     @problems = Problem.geocoded
 
@@ -35,6 +24,8 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
+    # .downcase to save the category correctly
+    @problem.category = @problem.category.downcase
     @problem.user = current_user
     @problem.date = DateTime.now
 
@@ -61,7 +52,6 @@ class ProblemsController < ApplicationController
     # redirect_to ..._url, notice: 'Problem was successfully destroyed'
   end
 
-
   def favorite
     @problem = Problem.find(params[:id])
     type = params[:type]
@@ -77,8 +67,6 @@ class ProblemsController < ApplicationController
       redirect_to dashboard_path, notice: 'Nothing happened.'
     end
   end
-
-
 
   private
 

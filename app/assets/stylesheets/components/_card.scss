@@ -5,12 +5,18 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 90px;
+  width: 90px;
   object-fit: cover;
+  border-radius: 10px;
+  margin-left: 20px;
 }
 
 .card-product h2 {
@@ -29,8 +35,28 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  height: 120px;
 }
 
 .cards {
   padding: 10px; // we have overal marging so ok for now
+
+}
+
+.card-product-description {
+  padding-top: 5px;
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-product-adress {
+  padding-top: 5px;
+  font-style: italic;
+}
+
+.cards-dash {
+  margin-bottom: 35px;
+
 }
