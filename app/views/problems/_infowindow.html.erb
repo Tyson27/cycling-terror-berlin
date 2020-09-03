@@ -1,10 +1,16 @@
 <div class="pop-up" >
-  <div class="content">
+  <div class="content" style="max-width: 120px;">
   <h2 class="content-title">Category: <%= problem.category %></h2>
 <!--   <p class="content-text">Location: <%#= problem.location %></p> -->
   <p class="content-text">Description: <%= problem.description.capitalize %></p>
   <p class="content-text">Date: <%= problem.date %></p>
   <p class="content-text">Votes: <%= problem.favoritors.count %></p>
   </div>
+  <%= link_to favorite_problem_path(problem, type: "favorite"), method: :put do %>
+  <i class="far fa-star"></i>
+  <% end %>
+  <%#= link_to "unfavorite", favorite_problem_path(problem, type: "unfavorite"), method: :put %>
 </div>
 <!-- location needs to be input by user, we DO NOT show it in seeds :D -->
+
+

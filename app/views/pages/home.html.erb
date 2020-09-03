@@ -5,7 +5,25 @@
 
   <%= image_tag "logo_transparent.png", alt: "logo", class: "logo", height: 500 %>
 
+
   <h1 class="hometext">Welcome back, <%= current_user.first_name.capitalize if current_user %>!</h1>
+
+  <div>
+  <% if current_user.avatar.attached? %>
+ <%= link_to profile_path do %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar-home" %>
+         <% end %>
+          <% else %>
+            <%= image_tag "default.gif", class: "avatar-home" %>
+          <% end %>
+  </div>
+<% end %>
+  <%= image_tag "logo_transparent.png", alt: "logo", class: "logo"%>
+
+
+  
+  <%= link_to problems_path, class: "btn btn-outline" do %> <i class="fas fa-map-marked-alt"></i> Show my Map <% end %>
+
   <% if current_user %>
     <%= link_to new_problem_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-plus-circle"></i> Add a Problem
     <% end %>
@@ -14,7 +32,7 @@
       <i class="fas fa-plus-circle"></i> Add a Problem
     </button>
   <% end %>
-  <%= link_to problems_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-map-marked-alt"></i> Show my Map <% end %>
+
   <% if current_user %>
     <%= link_to dashboard_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-bookmark"></i> My Contributions <% end %>
   <% else %>
@@ -22,9 +40,11 @@
       <i class="fas fa-bookmark"></i> My Contributions
     </button>
   <% end %>
+
 <!--   <%= link_to dashboard_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-info-circle"></i> Information <% end %>
  -->
  <%= link_to profile_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-user-circle"></i> Account <% end %>
+
   </div>
 
 
@@ -34,9 +54,12 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header-login">
 <!-- Title -->
-        <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+        <h5 class="modal-title"> Hello!</h5>
+<br>
+        <h3 class="exampleModalLabel"><strong>Sign into your account:</strong></h3>
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -56,6 +79,12 @@
           <div class="form-actions">
             <%= f.button :submit, "Log in" %>
           </div>
+          <br>
+            <div class="signup">
+              <h3>Don't have an account?</h3>
+              <br>
+              <h5>Sign up <%= link_to new_user_registration_path do%> <button class="here-button">here</button> <% end %> </h5>
+            </div>
         <% end %>
 
       </div>

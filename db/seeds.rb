@@ -15,7 +15,7 @@ puts "Database restored"
     )
 
 categories = Problem::CATEGORIES
-100.times do
+50.times do
   problem = Problem.new(
     category: categories.sample,
     description: Faker::ChuckNorris.fact,

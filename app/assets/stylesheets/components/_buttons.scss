@@ -1,4 +1,15 @@
 // normal buttons that get a coloured line when you hover over it
+.form-actions{
+  color: #031926;
+  background: #9DBEBB;;
+  padding: 10px 24px;
+  border-radius: 5px;
+  border: 3px solid #031926;
+  font-weight: lighter;
+  margin: auto;
+  text-align: center;
+}
+
 .btn-outline {
   color: #4A4A4A;
   padding: 10px 24px;
