@@ -62,12 +62,11 @@ class ProblemsController < ApplicationController
 
   def favorite
     @problem = Problem.find(params[:id])
-    type = params[:type]
-    if type == "favorite"
+    @type = params[:type]
+    if @type == "favorite"
       current_user.favorite(@problem)
       redirect_to dashboard_path, notice: "You favorited #{@problem.description}"
-
-    elsif type == "unfavorite"
+    elsif @type == "unfavorite"
       current_user.unfavorite(@problem)
       redirect_to dashboard_path, notice: "Unfavorited #{@problem.description}"
     else
