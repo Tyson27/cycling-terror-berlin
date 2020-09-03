@@ -38,12 +38,14 @@
         <p class="card-product-adress"><%= user_problem.location %></p>
         <p class="card-product-description"><%= user_problem.description %></p>
 
-
-        <%= link_to "favorite", favorite_problem_path(user_problem, type: "favorite"), method: :put %>
-        <%= link_to "unfavorite", favorite_problem_path(user_problem, type: "unfavorite"), method: :put %>
       </div>
     </div>
   <% end %>
+       <!--  <%# if @type == "unfavorite" %>
+        <%#= link_to "favorite", favorite_problem_path(user_problem, type: "unfavorite"), method: :put %>
+        <%# else %>
+        <%#= link_to "unfavorite", favorite_problem_path(user_problem, type: "favorite"), method: :put %>
+        <%# end %> -->
 <% end %>
 </div>
 
@@ -52,10 +54,27 @@
 <!--     <h3>Menu 2-Supported requests</h3>
  -->
 
-  <% @favorite_problems.each do |favorite_problem| %>
-    <%= favorite_problem.category %>
-    <%= favorite_problem.location %>
-    <% end %>
+<% @favorite_problems.each do |favorite_problem| %>
+  <%= link_to problem_path(favorite_problem) do %>
+    <div class="card-product mt-3">
+      <% if favorite_problem.category == "Glass" %>
+        <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+      <% elsif favorite_problem.category == "Construction work" %>
+        <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80">
+      <% else %>
+        <img src="https://www.bussgeldkatalog.de/wp-content/uploads/verkehrszeichen-fahrradstrasse.png">
+      <% end %>
+      <div class="card-product-infos">
+      <h2><%= favorite_problem.category %></h2>
+        <p class="card-product-adress"><%= favorite_problem.location %></p>
+        <p class="card-product-description"><%= favorite_problem.description %></p>
+      <%= link_to "unfavorite", favorite_problem_path(favorite_problem, type: "favorite"), method: :put %>
+<% end %>
+      </div>
+    </div>
+  <% end %>
+
+
   </div>
 
 </div>
