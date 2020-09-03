@@ -3,7 +3,7 @@
     <% if @user.avatar.attachment %>
       <%= cl_image_tag @user.avatar.key, class: "avatar", crop: :fill %>
     <% else  %>
-      <%= image_tag "default.jpg", alt: "Profile Pic", class: "avatar-large mt-4" %>
+      <%= image_tag "placeholder.jpg", alt: "Profile Pic", class: "avatar-large mt-4" %>
     <% end %>
 
   </div>

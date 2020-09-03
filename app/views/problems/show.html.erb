@@ -7,11 +7,11 @@
 
     <div class="card-trip">
      <% if @problem.category == "Glass" %>
-     <img src="broken-glass-show.jpg">
+     <%= image_tag "broken-glass-show.jpg"%>
      <% elsif @problem.category == "Construction work" %>
-     <img src="blocked-road-show.jpg">
+     <%= image_tag "blocked-road-show.jpg"%>
      <% else %>
-     <img src="cycling-path-show.png">
+     <%= image_tag "cycling-path-show.png"%>
      <% end %>
      <div class="card-trip-infos">
       <div>
