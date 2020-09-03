@@ -1,4 +1,4 @@
-<!-- THIS WILL BE A 'SINGLE' PROBLEM DISPLAYED ON THE MAP WHEN YOU CLICK A MARKER!-->
+<!-- PLS DO NOT TOUCH THE LOCATION :))))) THIS WILL BE A 'SINGLE' PROBLEM DISPLAYED ON THE MAP WHEN YOU CLICK A MARKER!-->
 
 <div class="blue-backround">
   <%#= image_tag "bike-01.png", alt: "bike", class: 'bike-image' %>
@@ -18,6 +18,7 @@
       <div>
         <h2>Category: <%= @problem.category %></h2>
 <!--         <p>Location: <%#= @problem.location.capitalize %></p> -->
+
         <p>Description: <%= @problem.description.capitalize %></p>
         <p>Date: <%= @problem.date %></p>
         <p>Votes: <%= @problem.favoritors.count %></p>
