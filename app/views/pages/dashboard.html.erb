@@ -2,14 +2,15 @@
 
 <div class="blue-background container-main">
 
-<h1>Contributions Overview</h1>
+<h1>Contributions</h1>
 
   <div class="btn-group" role="group" aria-label="Basic example"
   style="align-items: flex-start; display: flex">
 
-  <button id="Menu1-button" type="button" class="btn-requests-menu btn-requests-menu-active"> ⭕️ My Contributions</button>
-
-  <button id="Menu2-button" type="button" class="btn-requests-menu"> ⭐️ Upvoted Contributions</button>
+  <button id="Menu1-button" type="button" class="btn-requests-menu btn-requests-menu-active"> ⭕️ Mine </button>
+<!--   add bookmark icon
+ -->
+  <button id="Menu2-button" type="button" class="btn-requests-menu"> ⭐️ Upvoted</button>
 <!--   <button id="Menu3-button" type="button" class="btn-submit"> Menu 3 - All? requests</button>
  -->
   </div>
@@ -29,7 +30,7 @@
       <% elsif user_problem.category == "construction_work" %>
         <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="">
       <% else %>
-        <img src="https://images.unsplash.com/photo-1485381771061-e2cbd5317d9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="">
+        <%= image_tag("card-fahrradstrasse.jpeg")%>
       <% end %>
       <div class="card-product-infos">
         <h2><%= user_problem.category %></h2>
