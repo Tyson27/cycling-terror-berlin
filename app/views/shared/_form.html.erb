@@ -2,7 +2,7 @@
 
   <%= simple_form_for @problem do |f| %>
 
-    <%= f.input :category, prompt: "Please Select", as: :select, collection: Problem::FORM_CATEGORIES, input_html: { class: 'form_inputs' } %>
+    <%= f.input :category, prompt: "Please Select", as: :select, collection: Problem::CATEGORIES, input_html: { class: 'form_inputs' } %>
     <%= f.input :location, :input_html => { :class => 'algolia-input' } %>
     <%= f.input :description, input_html: { class: 'form_inputs' } %>
     <%#= f.input :location, input_html: { class: 'form_inputs' } %>

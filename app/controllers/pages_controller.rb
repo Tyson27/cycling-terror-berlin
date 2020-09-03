@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   # end
 
   def dashboard
-    @user_problems = current_user.problems
+    @user_problems = current_user.problems.order(created_at: :desc)
     @user = current_user
     @favorites = @user.favorites_by_type('Problem')
     @favorite_problems = @favorites.map{ |favorite| favorite.favoritable }
