@@ -25,12 +25,12 @@
     <% @user_problems.each do |user_problem| %>
   <%= link_to problem_path(user_problem) do %>
     <div class="card-product mt-3">
-      <% if user_problem.category == "glass" %>
-        <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
-      <% elsif user_problem.category == "construction_work" %>
-        <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" alt="">
+      <% if user_problem.category == "Glass" %>
+        <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+      <% elsif user_problem.category == "Construction work" %>
+        <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80">
       <% else %>
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bussgeldkatalog.de%2Ffahrradstrasse%2F&psig=AOvVaw2yJ3p-1seYXiyZaITvPgHz&ust=1599210389955000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjQuY7RzOsCFQAAAAAdAAAAABAD" alt="">
+        <img src="https://www.bussgeldkatalog.de/wp-content/uploads/verkehrszeichen-fahrradstrasse.png" alt="">
       <% end %>
       <div class="card-product-infos">
         <h2><%= user_problem.category %></h2>
