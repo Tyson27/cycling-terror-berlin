@@ -1,5 +1,7 @@
-<div class="mt-5 pt-5">
-  <div class="text-center mb-2">
+<h1> Account </h1>
+
+<div class="mt-3 pt-3">
+  <div class="text-center mb-3">
 
 <% if @user.avatar.attached? %>
           <%= cl_image_tag @user.avatar.key, class: "avatar" %>
@@ -8,14 +10,18 @@
         <% end %>
 
   </div>
+
     <div class="text-center d-flex justify-content-center align-items-center">
       <%= link_to edit_user_registration_path, class: "edit-profile-icon" do %>
        <i class="fas fa-pencil-alt"></i>
       <% end %>
+
+<!--       <div class="mt-3 pt-3"/>
+ -->
      <h3><%= current_user.username %></h3>
     </div>
-</div>
 
+</div>
 
 <div class="text-center">
 
@@ -23,7 +29,7 @@
 
     <p><%= current_user.first_name.capitalize %>
       <%= current_user.last_name.capitalize%></p>
-      <p class="p-0" ><%= current_user.email.capitalize  %></p>
+      <p class="p-0" ><%= current_user.email  %></p>
 
 
   </div>
