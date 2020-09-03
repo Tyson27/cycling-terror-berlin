@@ -3,30 +3,48 @@
   color: #4A4A4A;
   padding: 10px 24px;
   border-radius: 5px;
-  border: 3px solid black;
+  border: 3px solid #031926;
   font-weight: lighter;
   background: white;
   width: 230px;
-  margin: 0; // we can change it if needed to set px left,right, up, bottom.
+  margin: 0; // we can change it if needed to set px left,margin-right: 10px, up, bottom.
 }
 
 // hover on mobile here works if user clicks on field to fill in.
 .btn-outline:hover {
-  border: 3px solid orange;
+  border: 3px solid #031926;
 }
 
 // submit button that change colour completely -> NO on mobile hover does not work on clicking buttons!
 .btn-submit {
-  color: white;
-  background: green;
+  color: #031926;
+  background: #9DBEBB;;
   padding: 10px 24px;
   border-radius: 5px;
-  // border: 3px solid black;
+  border: 3px solid #031926;
   font-weight: lighter;
   width: 230px;
   margin: auto; // we can change it if needed to set px left,right, up, bottom.
-
-
 }
 
+.btn-requests-menu {
+  color: #031926;
+  background: $white;
+  // padding: 10px 24px;
+  border-radius: 5px;
+  border: 3px solid #031926;
+  font-weight: lighter;
+  width: 230px;
+  margin: 10px 10px 10px 10px; // we can change it if needed to set px left,right, up, bottom.
+  &:active, &:focus, &:hover{
+    color: #031926;
+    background: #9DBEBB;
+    border: 3px solid #031926;
+  }
+}
 
+.btn-requests-menu-active{
+    color: #031926;
+    background: #9DBEBB;
+    border: 3px solid #031926;
+}

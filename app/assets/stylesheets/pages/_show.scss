@@ -1,3 +1,23 @@
+// Contributions Dashboard page (item 4 navbar)
+
+.show {
+  opacity: 1;
+  height: auto;
+  transition: opacity .5s, height 1s ease-in-out;
+}
+
+.hide {
+  opacity: 0;
+  height: 0;
+  transition: opacity .5s, height 1s ease-in-out;
+}
+
+.seperater {
+  width: 90vw;
+  background: black;
+  height: 3px;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;

@@ -11,13 +11,9 @@ require("channels")
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initAutocompleteForm } from '../plugins/init_autocomplete';
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-  initAutocomplete();
-  initAutocompleteForm();
-
-})
+import { initToggleMenu1 } from '../components/toggle_requests_style.js';
+import { initToggleMenu2 } from '../components/toggle_requests_style.js';
+import { initToggleMenuTab } from '../components/toggle_requests_style.js';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -39,6 +35,11 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
+  initMapbox();
+  initAutocomplete();
+  initAutocompleteForm();
+  initToggleMenu1();
+  initToggleMenu2();
+  initToggleMenuTab();
+})  // Call your functions here, e.g:
   // initSelect2();
-});
