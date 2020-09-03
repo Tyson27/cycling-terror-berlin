@@ -9,7 +9,15 @@ class ProblemsController < ApplicationController
         lat: problem.latitude,
         lng: problem.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { problem: problem }),
-        image_url: helpers.asset_url("#{problem.category}.png")
+        image_url: helpers.asset_url(
+          if problem.category == "Construction work"
+            "construction_work.png"
+          elsif problem.category == "Cycling path"
+            "cycling_path.png"
+          else
+            "glass.png"
+          end
+        )
       }
     end
   end
@@ -25,7 +33,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new(problem_params)
     # .downcase to save the category correctly
-    @problem.category = @problem.category.downcase
+    # @problem.category = @problem.category.downcase
     @problem.user = current_user
     @problem.date = DateTime.now
 
