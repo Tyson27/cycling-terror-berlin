@@ -2,14 +2,28 @@
 
 <div class="blue-background container-main">
 
-<h1>Dashboard</h1>
+<h1>Contributions Overview</h1>
 
-<div class="cards-dash">
-<h3>Created requests</h3>
+  <div class="btn-group" role="group" aria-label="Basic example"
+  style="align-items: flex-start; display: flex">
 
-<% @user_problems.each do |user_problem| %>
+  <button id="Menu1-button" type="button" class="btn-requests-menu btn-requests-menu-active"> ⭕️ My Contributions</button>
+
+  <button id="Menu2-button" type="button" class="btn-requests-menu"> ⭐️ Upvoted Contributions</button>
+<!--   <button id="Menu3-button" type="button" class="btn-submit"> Menu 3 - All? requests</button>
+ -->
+  </div>
+
+  <!-- <div class="seperater">
+  </div> -->
+
+  <div id="Menu1-container" class="show">
+
+<!--     <h3>Menu 1-Created requests</h3>
+ -->
+    <% @user_problems.each do |user_problem| %>
   <%= link_to problem_path(user_problem) do %>
-    <div class="card-product">
+    <div class="card-product mt-3">
       <% if user_problem.category == "glass" %>
         <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
       <% elsif user_problem.category == "construction_work" %>
@@ -22,7 +36,7 @@
 
         <p class="card-product-adress"><%= user_problem.location %></p>
         <p class="card-product-description"><%= user_problem.description %></p>
-        
+
 
         <%= link_to "favorite", favorite_problem_path(user_problem, type: "favorite"), method: :put %>
         <%= link_to "unfavorite", favorite_problem_path(user_problem, type: "unfavorite"), method: :put %>
@@ -32,11 +46,17 @@
 <% end %>
 </div>
 
-<h3>Supported requests</h3>
+  <div id="Menu2-container" class="hide">
+
+<!--     <h3>Menu 2-Supported requests</h3>
+ -->
+
   <% @favorite_problems.each do |favorite_problem| %>
     <%= favorite_problem.category %>
     <%= favorite_problem.location %>
-  <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 
