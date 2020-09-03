@@ -33,7 +33,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new(problem_params)
     # .downcase to save the category correctly
-    @problem.category = @problem.category.downcase
+    # @problem.category = @problem.category.downcase
     @problem.user = current_user
     @problem.date = DateTime.now
 
