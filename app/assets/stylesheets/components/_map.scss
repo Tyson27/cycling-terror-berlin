@@ -16,3 +16,8 @@
   cursor: pointer;
   background-color: transparent;
 }
+
+.mapboxgl-popup-content {
+  transform: scale(1.5);
+  bottom: 27px;
+}
