@@ -6,7 +6,7 @@
 
   <div class="btn-group" role="group" aria-label="Basic example"
   style="align-items: flex-start; display: flex">
-    
+
   <button id="Menu1-button" type="button" class="btn-requests-menu btn-requests-menu-active"> <i class="fas fa-biking"></i> Created </button>
 
 
@@ -37,9 +37,9 @@
       <div class="card-product-infos">
         <h2><%= user_problem.category %></h2>
 
-        <p class="card-product-adress"><%= user_problem.location %></p>
-        <p class="card-product-description"><%= user_problem.description %></p>
-
+        <p class="card-product-adress">Address: <%= user_problem.location %></p>
+        <p class="card-product-description">Description: <%= user_problem.description %></p>
+        <p class="card-product-description">Votes: <%= user_problem.favoritors.count %></p>
       </div>
     </div>
   <% end %>
