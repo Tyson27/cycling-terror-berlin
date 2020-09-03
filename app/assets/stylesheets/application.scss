@@ -26,3 +26,7 @@
   // h2 - do we have one?
 }
 
+a:focus, input:focus, button:focus, *:focus {
+  border: none;
+  outline: none;
+}
