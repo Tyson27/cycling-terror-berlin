@@ -34,6 +34,7 @@
       <% else %>
         <%= image_tag "cycling_path.png" %>
       <% end %>
+
       <div class="card-product-infos">
         <h2><%= user_problem.category %></h2>
 
@@ -70,7 +71,12 @@
       <h2><%= favorite_problem.category %></h2>
         <p class="card-product-adress"><%= favorite_problem.location %></p>
         <p class="card-product-description"><%= favorite_problem.description %></p>
-      <%= link_to "unfavorite", favorite_problem_path(favorite_problem, type: "favorite"), method: :put %>
+        <p class="card-product-description">Votes: <%= favorite_problem.favoritors.count %></p>
+
+      <%#= link_to "unfavorite", favorite_problem_path(favorite_problem, type: "favorite"), method: :put %>
+      <%= link_to favorite_problem_path(favorite_problem), method: :put do %>
+      <i class="far fa-star"></i>
+      <% end %>
 <% end %>
       </div>
     </div>
