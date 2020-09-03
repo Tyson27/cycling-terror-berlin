@@ -30,3 +30,7 @@ a:focus, input:focus, button:focus, *:focus {
   border: none;
   outline: none;
 }
+
+.mapboxgl-popup-close-button {
+  display:none !important
+}
