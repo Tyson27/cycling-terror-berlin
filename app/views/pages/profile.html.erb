@@ -1,10 +1,11 @@
 <div class="mt-5 pt-5">
   <div class="text-center mb-2">
-    <% if @user.avatar.attachment %>
-      <%= cl_image_tag @user.avatar.key, class: "avatar", crop: :fill %>
-    <% else  %>
-      <%= image_tag "placeholder.jpg", alt: "Profile Pic", class: "avatar-large mt-4" %>
-    <% end %>
+
+<% if @user.avatar.attached? %>
+          <%= cl_image_tag @user.avatar.key, class: "avatar" %>
+        <% else %>
+          <%= image_tag "default.gif", class: "avatar" %>
+        <% end %>
 
   </div>
     <div class="text-center d-flex justify-content-center align-items-center">

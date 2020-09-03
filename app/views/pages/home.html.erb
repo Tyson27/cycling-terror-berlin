@@ -1,10 +1,22 @@
 
 <div class="picture_backround">
 
-
   <div class="container">
 
+<% if current_user %>
+
+  <div>
+  <% if current_user.avatar.attached? %>
+ <%= link_to profile_path do %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar-home" %>
+         <% end %>
+          <% else %>
+            <%= image_tag "default.gif", class: "avatar-home" %>
+          <% end %>
+  </div>
+<% end %>
   <%= image_tag "logo_transparent.png", alt: "logo", class: "logo"%>
+
 
   <h1 class="hometext">Welcome back, <%= current_user.first_name if current_user %>!</h1>
   <% if current_user %>
