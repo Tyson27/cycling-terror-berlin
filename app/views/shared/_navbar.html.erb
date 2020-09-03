@@ -2,8 +2,74 @@
 
 <div class="icon-bar">
   <%= link_to root_path do %> <i class="fa fa-home"></i><% end %>
-  <%= link_to new_problem_path do %> <i class="fas fa-plus-circle"></i><% end %>
+<% if current_user %>
+    <%= link_to new_problem_path do %>
+    <i class="fas fa-plus-circle"></i>
+    <% end %>
+  <% else %>
+    <a type="button" data-toggle="modal" data-target="#exampleModal" href="#exampleModal"> <i class="fas fa-plus-circle"></i>
+    </a>
+  <% end %>
   <%= link_to problems_path do %> <i class="fas fa-map-marked-alt"></i><% end %>
-  <%= link_to dashboard_path do %> <i class="fas fa-bookmark"></i><% end %>
-  <%= link_to profile_path do %> <i class="fas fa-user-circle"></i><% end %>
+<% if current_user %>
+  <%= link_to dashboard_path do %>
+  <i class="fas fa-bookmark"></i>
+  <% end %>
+  <% else %>
+    <a type="button" data-toggle="modal" data-target="#exampleModal" href="#exampleModal"> <i class="fas fa-bookmark"></i>
+    </a>
+  <% end %>
+  <% if current_user %>
+  <%= link_to profile_path do %>
+  <i class="fas fa-user-circle"></i>
+  <% end %>
+  <% else %>
+    <a type="button" data-toggle="modal" data-target="#exampleModal" href="#exampleModal"> <i class="fas fa-user-circle"></i>
+    </a>
+  <% end %>
+  </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header-login">
+<!-- Title -->
+        <h5 class="modal-title"> Hello!</h5>
+<br>
+        <h3 class="exampleModalLabel"><strong>Sign into your account:</strong></h3>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(:user, url: user_session_path) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
+          <br>
+            <div class="signup">
+              <h3>Don't have an account?</h3>
+              <br>
+              <h5>Sign up <%= link_to new_user_registration_path do%> <button class="here-button">here</button> <% end %> </h5>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>
