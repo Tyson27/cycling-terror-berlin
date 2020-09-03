@@ -6,5 +6,7 @@
   <p class="content-text">Date: <%= problem.date %></p>
   <p class="content-text">Votes: <%= problem.favoritors.count %></p>
   </div>
+  <%= link_to "favorite", favorite_problem_path(problem, type: "favorite"), method: :put %>
+  <%= link_to "unfavorite", favorite_problem_path(problem, type: "unfavorite"), method: :put %>
 </div>
 <!-- location needs to be input by user, we DO NOT show it in seeds :D -->
