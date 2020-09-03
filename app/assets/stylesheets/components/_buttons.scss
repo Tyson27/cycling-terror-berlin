@@ -27,6 +27,17 @@
   margin: auto; // we can change it if needed to set px left,right, up, bottom.
 }
 
+.btn-homepage-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &:active, &:focus, &:hover {
+    border: 3px solid #031926;
+  }
+  .fas {padding-right: 5px;
+  }
+}
+
 .btn-requests-menu {
   color: #031926;
   background: $white;
