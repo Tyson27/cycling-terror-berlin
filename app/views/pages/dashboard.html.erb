@@ -24,7 +24,7 @@
 
 <!--     <h3>Menu 1-Created requests</h3>
  -->
-    <% current_user_problems.each do |user_problem| %>
+    <% current_user.problems.each do |user_problem| %>
   <%= link_to problem_path(user_problem) do %>
     <div class="card-product mt-3">
       <% if user_problem.category == "Glass" %>
