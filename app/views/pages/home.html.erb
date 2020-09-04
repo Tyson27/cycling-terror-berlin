@@ -3,15 +3,14 @@
   <%= image_tag "logo_transparent.png", alt: "logo", class: "logo", height: 500 %>
   <h1 class="hometext">Welcome <%= current_user.first_name.capitalize if current_user %>!</h1>
   <% if current_user %>
-    <%= link_to new_problem_path, class: "btn btn-outline btn-homepage-menu" do %>
-     <i class="fas fa-plus-circle"></i> Add a Problem
+  <%= link_to problems_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-map-marked-alt"></i> Show Map <% end %>
+    <%= link_to new_problem_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-plus-circle"></i> Add a Problem
     <% end %>
   <% else %>
     <button type="button" class="btn btn-outline btn-homepage-menu" data-toggle="modal" data-target="#exampleModal">
       <i class="fas fa-plus-circle"></i> Add a Problem
     </button>
   <% end %>
-  <%= link_to problems_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-map-marked-alt"></i> Show Map <% end %>
   <% if current_user %>
     <%= link_to dashboard_path, class: "btn btn-outline btn-homepage-menu" do %> <i class="fas fa-bookmark"></i> My Contributions <% end %>
   <% else %>
