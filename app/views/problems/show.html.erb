@@ -19,8 +19,7 @@
      <div class="card-trip-infos">
       <div>
         <h2>Category: <%= @problem.category %></h2>
-<!--         <p>Location: <%#= @problem.location.capitalize %></p> -->
-
+        <p>Location: <%= @problem.location.capitalize %>
         <p><u>Description:</u> <%= @problem.description.capitalize %></p>
         <p><u>Date:</u> <%= @problem.date.strftime("%d.%m.%Y %k:%M") %></p>
         <p><u>Votes:</u> <%= @problem.favoritors.count %></p>
