@@ -3,8 +3,8 @@
 <div class="mt-3 pt-3">
   <div class="text-center mb-3">
 
-<% if @user.avatar.attached? %>
-          <%= cl_image_tag @user.avatar.key, class: "avatar" %>
+<% if current_user.avatar.attached? %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
         <% else %>
           <%= image_tag "default.gif", class: "avatar" %>
         <% end %>
