@@ -2,6 +2,7 @@
   resource :profile
   resources :problems do
    put :favorite, on: :member
+   patch :favorite, on: :member
   end
   devise_for :users
   root to: 'pages#home'
