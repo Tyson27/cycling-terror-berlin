@@ -1,3 +1,5 @@
+<div class="container-main">
+
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,3 +20,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<div class="signup">
+              <h3>Don't have an account?</h3>
+              <br>
+              <h5>Sign up <%= link_to new_user_registration_path do%> <button class="here-button">here</button> <% end %> </h5>
+            </div>
+
+</div>
+
