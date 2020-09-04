@@ -65,13 +65,13 @@ class ProblemsController < ApplicationController
     @type = params[:type]
     if @type == "favorite"
       current_user.favorite(@problem)
-      redirect_to dashboard_path, notice: "You favorited #{@problem.description}"
+      redirect_to problems_path, notice: "You favorited #{@problem.description}"
     elsif @type == "unfavorite"
       current_user.unfavorite(@problem)
-      redirect_to dashboard_path, notice: "Unfavorited #{@problem.description}"
+      redirect_to problems_path, notice: "Unfavorited #{@problem.description}"
     else
       # Type missing, nothing happens
-      redirect_to dashboard_path, notice: 'Nothing happened.'
+      redirect_to problems_path, notice: 'Nothing happened.'
     end
   end
 

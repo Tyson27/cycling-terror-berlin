@@ -4,6 +4,7 @@
   overflow: auto; /* Overflow due to float */
   position: fixed; /* Fix of the Navbar */
   bottom: 0; /*Position of the Navbar*/
+  z-index:100;
 }
 
 .icon-bar a {
