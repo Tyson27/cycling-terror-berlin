@@ -3,3 +3,27 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
+<script defer>
+  document.addEventListener("click", (event) => {
+    if (document.getElementById("map")) {
+      if (event.target.dataset.type === "star") {
+        event.target.classList.toggle("fas");
+        event.target.classList.toggle("far");
+
+        const voteCountElement = event.target.parentElement.previousElementSibling;
+        let voteCount = voteCountElement.querySelector(".vote-count");
+        let voteCountNumber = parseInt(voteCount.innerText, 10);
+
+        if (event.target.classList.contains("fas")) {
+          voteCount.innerText = voteCountNumber + 1;
+        } else {
+          voteCount.innerText = voteCountNumber - 1;
+        }
+      }
+    }
+  })
+</script>
+
+
+

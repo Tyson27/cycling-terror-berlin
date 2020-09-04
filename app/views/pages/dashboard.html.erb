@@ -27,9 +27,9 @@
     <% current_user.problems.each do |user_problem| %>
   <%= link_to problem_path(user_problem) do %>
     <div class="card-product mt-3">
-      <% if user_problem.category == "Glass" %>
+      <% if user_problem.category.upcase == "GLASS" %>
         <%= image_tag "glass.png" %>
-      <% elsif user_problem.category == "Construction work" %>
+      <% elsif user_problem.category.upcase == "CONSTRUCTION_WORK" || user_problem.category.upcase == "CONSTRUCTION WORK" %>
         <%= image_tag "construction_work.png" %>
       <% else %>
         <%= image_tag "cycling_path.png" %>
@@ -44,6 +44,7 @@
       </div>
     </div>
   <% end %>
+
        <!--  <%# if @type == "unfavorite" %>
         <%#= link_to "favorite", favorite_problem_path(user_problem, type: "unfavorite"), method: :put %>
         <%# else %>
@@ -59,13 +60,13 @@
 
 <% @favorite_problems.each do |favorite_problem| %>
   <%= link_to problem_path(favorite_problem) do %>
-    <div class="card-product mt-3">
-      <% if favorite_problem.category == "Glass" %>
-        <img src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-      <% elsif favorite_problem.category == "Construction work" %>
-        <img src="https://images.unsplash.com/photo-1478486982180-2de2fafa19f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80">
+    <div class="card-product mt-3" style="position: relative;">
+      <% if favorite_problem.category.upcase == "GLASS" %>
+        <%= image_tag "glass.png" %>
+      <% elsif favorite_problem.category.upcase == "CONSTRUCTION_WORK" || favorite_problem.category.upcase == "CONSTRUCTION WORK" %>
+        <%= image_tag "construction_work.png" %>
       <% else %>
-        <img src="https://www.bussgeldkatalog.de/wp-content/uploads/verkehrszeichen-fahrradstrasse.png">
+        <%= image_tag "cycling_path.png" %>
       <% end %>
       <div class="card-product-infos">
       <h2><%= favorite_problem.category %></h2>
@@ -74,11 +75,18 @@
         <p class="card-product-description">Votes: <%= favorite_problem.favoritors.count %></p>
 
       <%#= link_to "unfavorite", favorite_problem_path(favorite_problem, type: "favorite"), method: :put %>
-      <%= link_to favorite_problem_path(favorite_problem), method: :put do %>
-      <i class="far fa-star"></i>
-      <% end %>
-<% end %>
+  <% end %>
+
+
+
       </div>
+      <%= link_to favorite_problem_path(favorite_problem), method: :patch, remote: true do %>
+    <% if favorite_problem.favoritors.include? current_user %>
+      <i data-type="star" class="fas fa-star" style="z-index: 10000; padding: 8px; position: absolute; right: 10px; top: 10px;"></i>
+    <% else %>
+      <i data-type="star" class="far fa-star" style="z-index: 10000; padding: 8px; position: absolute; right: 10px; top: 10px;"></i>
+    <% end %>
+  <% end %>
     </div>
   <% end %>
 
@@ -86,6 +94,19 @@
   </div>
 
 </div>
+
+<script defer>
+  document.getElementById("Menu2-container").addEventListener("click", (event) => {
+    if (event.target.dataset.type === "star") {
+      event.target.classList.toggle("fas");
+      event.target.classList.toggle("far");
+
+      if (event.target.classList.contains("far")) {
+        event.target.closest(".card-product").remove();
+      }
+    }
+  })
+</script>
 
 
 
