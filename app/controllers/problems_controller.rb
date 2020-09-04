@@ -1,5 +1,5 @@
 class ProblemsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index]
+  skip_before_action :authenticate_user!, only: [ :index, :favorite]
 
   def index
     @problems = Problem.geocoded
@@ -62,16 +62,17 @@ class ProblemsController < ApplicationController
 
   def favorite
     @problem = Problem.find(params[:id])
-    @type = params[:type]
-    if @type == "favorite"
-      current_user.favorite(@problem)
-      redirect_to problems_path, notice: "You favorited #{@problem.description}"
-    elsif @type == "unfavorite"
+    # @type = params[:type]
+    if @problem.favoritors.include? current_user
       current_user.unfavorite(@problem)
-      redirect_to problems_path, notice: "Unfavorited #{@problem.description}"
+      current_user.save
+      puts "unfavourite"
+      # redirect_to problems_path, notice: "You favorited #{@problem.description}"
     else
-      # Type missing, nothing happens
-      redirect_to problems_path, notice: 'Nothing happened.'
+      current_user.favorite(@problem)
+      current_user.save
+      puts "favourite"
+      # redirect_to problems_path, notice: "Unfavorited #{@problem.description}"
     end
   end
 

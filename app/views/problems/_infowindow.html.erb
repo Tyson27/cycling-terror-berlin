@@ -1,20 +1,22 @@
 <div class="pop-up" >
   <div class="content" style="max-width: 120px;">
-  <h2 class="content-title">Category: <%= problem.category.capitalize %></h2>
-<!--   <p class="content-text">Location: <%#= problem.location %></p> -->
-  <p class="content-text blue-text">Description:</p>
-    <p class="content-text"><%= problem.description.capitalize %></p>
-  <p class="content-text blue-text">Date:</p>
-    <p class="content-text"><%= problem.date.strftime("%d.%m.%Y %k:%M") %></p>
-  <div class="d-flex justify-content-between">
-  <p class="content-text">Votes: <%= problem.favoritors.count %></p>
-  <%= link_to favorite_problem_path(problem, type: "favorite"), method: :patch, remote: true do %>
-    <i class="far fa-star"></i>
-  <% end %>
-  </div>
+    <h2 class="content-title">Category: <%= problem.category.capitalize %></h2>
+  <!--   <p class="content-text">Location: <%#= problem.location %></p> -->
+    <p class="content-text blue-text">Description:</p>
+      <p class="content-text"><%= problem.description.capitalize %></p>
+    <p class="content-text blue-text">Date:</p>
+      <p class="content-text"><%= problem.date.strftime("%d.%m.%Y %k:%M") %></p>
+    <div class="d-flex justify-content-between">
+    <p class="content-text">Votes: <span class="vote-count"><%= problem.favoritors.count %></span></p>
+    <%= link_to favorite_problem_path(problem), method: :patch, remote: true do %>
+      <% if problem.favoritors.include? current_user %>
+        <i data-type="star" class="fas fa-star"></i>
+      <% else %>
+        <i data-type="star" class="far fa-star"></i>
+      <% end %>
+    <% end %>
+    </div>
   </div>
   <%#= link_to "unfavorite", favorite_problem_path(problem, type: "unfavorite"), method: :put %>
 </div>
 <!-- location needs to be input by user, we DO NOT show it in seeds :D -->
-
-
