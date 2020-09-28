@@ -1,9 +1,9 @@
 # require 'faker'
 
-# puts "Cleaning database"
-# Problem.destroy_all
-# User.destroy_all
-# puts "Database restored"
+puts "Cleaning database"
+Problem.destroy_all
+User.destroy_all
+puts "Database restored"
 
 
 #   user = User.create!(
